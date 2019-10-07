@@ -1,4 +1,4 @@
-void bfs(std::vector<std::vector<int>> graph, std::vector<bool> visited) {
+void BFS(std::vector<std::vector<int>> graph, std::vector<bool> visited) {
     int current = 0;
     visited[current] = true;
     queue<int> q;
