@@ -1,0 +1,24 @@
+void bfs(std::vector<std::vector<int>> graph, std::vector<bool> visited) {
+    int current = 0;
+    visited[current] = true;
+    queue<int> q;
+    q.push(current);
+    while (!q.empty()) {
+        int current = q.front();
+        q.pop();
+        for (int neighbour : graph[current]) {
+            if (!visited[neighbour]) {
+                visited[neighbour] = true;
+                q.push(neighbour);
+            }
+        }
+    }
+}
+
+int main() {
+    std::vector<std::vector<int>> graph; // здесь будет храниться граф в виде списка смежных вершин
+    auto n = graph.size();
+    std::vector<bool> visited(n, false);
+    BFS(graph, visited);
+    return 0;
+}
